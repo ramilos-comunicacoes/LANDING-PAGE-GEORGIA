@@ -992,6 +992,75 @@ button {
 }
 
 /* ============================================================
+   AUDIENCE / QUEM ATENDEMOS
+   ============================================================ */
+.audience {
+    background: var(--color-bg-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.audience__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--space-xl);
+    text-align: center;
+}
+
+.audience__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-xl) var(--space-md);
+    border-radius: var(--radius-lg);
+    background: var(--color-white);
+    border: 1px solid rgba(71, 19, 42, 0.06);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    cursor: default;
+}
+
+.audience__item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(201, 169, 110, 0.3);
+}
+
+.audience__icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(71, 19, 42, 0.06), rgba(201, 169, 110, 0.12));
+    border-radius: 50%;
+    color: var(--color-primary);
+    transition: all var(--transition-base);
+}
+
+.audience__icon .lucide {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.6;
+}
+
+.audience__item:hover .audience__icon {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+.audience__label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
    SERVICES SECTION
    ============================================================ */
 .services {
@@ -1452,6 +1521,210 @@ button {
     color: var(--color-text-on-dark);
     line-height: 1.8;
     opacity: 0.85;
+}
+
+/* ============================================================
+   LEAD FORM – SALÁRIO MATERNIDADE
+   ============================================================ */
+.lead-form {
+    background: linear-gradient(135deg, var(--color-bg-warm) 0%, var(--color-bg-light) 100%);
+    position: relative;
+}
+
+.lead-form__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+}
+
+.lead-form__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+    margin-bottom: var(--space-xl);
+}
+
+.lead-form__title em {
+    color: var(--color-accent-dark);
+    font-style: italic;
+}
+
+.lead-form__text {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: var(--space-xl);
+}
+
+.lead-form__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.lead-form__benefit {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.lead-form__benefit .lucide {
+    width: 18px;
+    height: 18px;
+    color: var(--color-accent-dark);
+    flex-shrink: 0;
+}
+
+/* Form Card */
+.lead-form__form-wrapper {
+    position: relative;
+}
+
+.lead-form__form {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(71, 19, 42, 0.06);
+}
+
+.lead-form__form-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(71, 19, 42, 0.08);
+}
+
+.lead-form__form-title .lucide {
+    width: 20px;
+    height: 20px;
+    color: var(--color-accent);
+}
+
+.lead-form__field {
+    margin-bottom: var(--space-lg);
+}
+
+.lead-form__field label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.lead-form__field input,
+.lead-form__field select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid rgba(71, 19, 42, 0.12);
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+    background: var(--color-bg-light);
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.lead-form__field input:focus,
+.lead-form__field select:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.15);
+    background: var(--color-white);
+}
+
+.lead-form__field input::placeholder {
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+.lead-form__submit {
+    width: 100%;
+    padding: 16px;
+    font-size: 0.95rem;
+    margin-top: var(--space-sm);
+}
+
+.lead-form__submit .lucide {
+    width: 18px;
+    height: 18px;
+}
+
+.lead-form__disclaimer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: var(--space-md);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+.lead-form__disclaimer .lucide {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+/* Success state */
+.lead-form__success {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-xl);
+}
+
+.lead-form__success-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.1), rgba(46, 125, 50, 0.05));
+    border-radius: 50%;
+    color: var(--color-success);
+}
+
+.lead-form__success-icon .lucide {
+    width: 32px;
+    height: 32px;
+}
+
+.lead-form__success h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+}
+
+.lead-form__success p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+/* Angle divider for Lead Form → Contact */
+.section-divider-wave--angle-2 {
+    background: linear-gradient(135deg, var(--color-bg-warm), var(--color-bg-light));
+    margin-top: -1px;
+}
+
+.section-divider-wave--angle-2 svg {
+    height: 60px;
 }
 
 /* ============================================================
@@ -1991,6 +2264,14 @@ body.a11y-font-decrease { font-size: 14px !important; }
     .footer__brand {
         grid-column: 1 / -1;
     }
+
+    .audience__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .lead-form__inner {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ============================================================
@@ -1999,6 +2280,38 @@ body.a11y-font-decrease { font-size: 14px !important; }
 @media (max-width: 768px) {
     :root {
         --header-height: 60px;
+    }
+
+    .audience__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-md);
+    }
+
+    .audience__item {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .audience__icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .audience__icon .lucide {
+        width: 22px;
+        height: 22px;
+    }
+
+    .audience__label {
+        font-size: 0.72rem;
+    }
+
+    .lead-form__inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
+
+    .lead-form__form {
+        padding: var(--space-xl);
     }
 
     .container {
@@ -2236,6 +2549,29 @@ body.a11y-font-decrease { font-size: 14px !important; }
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .audience__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .audience__icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .audience__icon .lucide {
+        width: 20px;
+        height: 20px;
+    }
+
+    .audience__label {
+        font-size: 0.68rem;
+    }
+
+    .lead-form__form {
+        padding: var(--space-lg);
     }
 }
 

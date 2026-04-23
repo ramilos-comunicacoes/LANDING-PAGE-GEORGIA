@@ -84,6 +84,7 @@
                     <li><a href="#equipe">Equipe</a></li>
                     <li><a href="#depoimentos">Depoimentos</a></li>
                     <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#formulario">Formulário</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
                 <a href="https://wa.me/5588992798152?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." class="header__cta" target="_blank" rel="noopener" id="header-cta">
@@ -204,6 +205,49 @@
                             <div class="about__stat-label">Escritórios</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════ QUEM ATENDEMOS ══════════ -->
+    <section class="audience section-padding" id="publico">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Nosso Público</span>
+                <h2 class="section-title section-title--dark">Quem Atendemos</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Atuamos com carinho e dedicação para garantir os direitos de quem mais precisa.</p>
+            </div>
+
+            <div class="audience__grid stagger-children">
+                <div class="audience__item fade-in">
+                    <div class="audience__icon"><i data-lucide="baby" class="lucide"></i></div>
+                    <span class="audience__label">Gestantes</span>
+                </div>
+                <div class="audience__item fade-in">
+                    <div class="audience__icon"><i data-lucide="heart" class="lucide"></i></div>
+                    <span class="audience__label">Mães</span>
+                </div>
+                <div class="audience__item fade-in">
+                    <div class="audience__icon"><i data-lucide="heart-pulse" class="lucide"></i></div>
+                    <span class="audience__label">Pessoas com<br>Problemas de Saúde</span>
+                </div>
+                <div class="audience__item fade-in">
+                    <div class="audience__icon"><i data-lucide="wheat" class="lucide"></i></div>
+                    <span class="audience__label">Agricultores</span>
+                </div>
+                <div class="audience__item fade-in">
+                    <div class="audience__icon"><i data-lucide="accessibility" class="lucide"></i></div>
+                    <span class="audience__label">Pessoas com<br>Deficiência</span>
+                </div>
+                <div class="audience__item fade-in">
+                    <div class="audience__icon"><i data-lucide="user-round" class="lucide"></i></div>
+                    <span class="audience__label">Idosos</span>
+                </div>
+                <div class="audience__item fade-in">
+                    <div class="audience__icon"><i data-lucide="hand-helping" class="lucide"></i></div>
+                    <span class="audience__label">Viúvas e<br>Pensionistas</span>
                 </div>
             </div>
         </div>
@@ -478,11 +522,71 @@
         </div>
     </section>
 
-    <!-- Wave: FAQ → Contact -->
+    <!-- Wave: FAQ → Lead Form -->
     <div class="section-divider-wave section-divider-wave--to-light-2">
         <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,30 C200,70 400,10 600,50 C800,90 1000,20 1200,50 C1350,70 1420,30 1440,40 L1440,0 L0,0 Z" fill="var(--color-primary)" opacity="0.5"/>
             <path d="M0,40 C360,80 720,0 1080,60 C1260,90 1380,30 1440,50 L1440,0 L0,0 Z" fill="var(--color-primary)"/>
+        </svg>
+    </div>
+
+    <!-- ══════════ LEAD FORM – SALÁRIO MATERNIDADE ══════════ -->
+    <section class="lead-form section-padding" id="formulario">
+        <div class="container">
+            <div class="lead-form__inner">
+                <div class="lead-form__content fade-in-left">
+                    <span class="section-label">Garanta Seu Direito</span>
+                    <h2 class="lead-form__title">Como ter seu <em>Salário Maternidade</em> garantido</h2>
+                    <p class="lead-form__text">Você é mãe ou gestante e trabalha na roça? Você pode ter direito ao Salário Maternidade mesmo sem contribuir para o INSS. Preencha o formulário e nossa equipe entrará em contato para analisar seu caso gratuitamente.</p>
+                    <div class="lead-form__benefits">
+                        <div class="lead-form__benefit"><i data-lucide="check-circle" class="lucide"></i> Análise gratuita do seu caso</div>
+                        <div class="lead-form__benefit"><i data-lucide="check-circle" class="lucide"></i> Retorno em até 24 horas</div>
+                        <div class="lead-form__benefit"><i data-lucide="check-circle" class="lucide"></i> Atendimento online ou presencial</div>
+                        <div class="lead-form__benefit"><i data-lucide="check-circle" class="lucide"></i> Sem compromisso inicial</div>
+                    </div>
+                </div>
+
+                <div class="lead-form__form-wrapper fade-in-right">
+                    <form class="lead-form__form" id="lead-form-maternidade" onsubmit="handleLeadForm(event)">
+                        <h3 class="lead-form__form-title"><i data-lucide="file-text" class="lucide"></i> Preencha seus dados</h3>
+                        <div class="lead-form__field">
+                            <label for="lead-name">Seu nome completo</label>
+                            <input type="text" id="lead-name" name="nome" placeholder="Maria da Silva" required>
+                        </div>
+                        <div class="lead-form__field">
+                            <label for="lead-phone">WhatsApp (com DDD)</label>
+                            <input type="tel" id="lead-phone" name="telefone" placeholder="(88) 9 9999-9999" required>
+                        </div>
+                        <div class="lead-form__field">
+                            <label for="lead-city">Sua cidade</label>
+                            <input type="text" id="lead-city" name="cidade" placeholder="Tianguá, São Benedito...">
+                        </div>
+                        <div class="lead-form__field">
+                            <label for="lead-situation">Sua situação</label>
+                            <select id="lead-situation" name="situacao" required>
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="gestante">Estou grávida</option>
+                                <option value="mae-recente">Tive bebê recentemente</option>
+                                <option value="rural">Sou trabalhadora rural</option>
+                                <option value="negado">Tive benefício negado</option>
+                                <option value="duvida">Tenho dúvidas sobre meus direitos</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn--primary lead-form__submit" id="lead-submit">
+                            <i data-lucide="send" class="lucide"></i>
+                            Quero Minha Análise Gratuita
+                        </button>
+                        <p class="lead-form__disclaimer"><i data-lucide="lock" class="lucide"></i> Seus dados estão seguros. Não compartilhamos suas informações.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave: Lead Form → Contact -->
+    <div class="section-divider-wave section-divider-wave--angle-2">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1440,0 L0,60 L0,60 L1440,60 Z" fill="var(--color-bg-light)"/>
         </svg>
     </div>
 

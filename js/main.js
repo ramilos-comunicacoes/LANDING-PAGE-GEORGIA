@@ -217,3 +217,56 @@ function initActiveNav() {
 
     window.addEventListener('scroll', onScroll, { passive: true });
 }
+
+/* ── Lead Form – Salário Maternidade ── */
+function handleLeadForm(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const nome = form.querySelector('#lead-name')?.value?.trim() || '';
+    const telefone = form.querySelector('#lead-phone')?.value?.trim() || '';
+    const cidade = form.querySelector('#lead-city')?.value?.trim() || '';
+    const situacao = form.querySelector('#lead-situation')?.value || '';
+
+    const situacaoTexts = {
+        'gestante': 'Estou grávida',
+        'mae-recente': 'Tive bebê recentemente',
+        'rural': 'Sou trabalhadora rural',
+        'negado': 'Tive benefício negado',
+        'duvida': 'Tenho dúvidas sobre meus direitos'
+    };
+
+    const mensagem = `Olá! Vim pelo site e gostaria de saber mais sobre o *Salário Maternidade*.
+
+📋 *Dados do formulário:*
+👤 Nome: ${nome}
+📱 Telefone: ${telefone}
+📍 Cidade: ${cidade || 'Não informada'}
+📝 Situação: ${situacaoTexts[situacao] || situacao}
+
+Gostaria de uma análise gratuita do meu caso!`;
+
+    // Show success state
+    const wrapper = form.closest('.lead-form__form-wrapper');
+    if (wrapper) {
+        wrapper.innerHTML = `
+            <div class="lead-form__form" style="text-align:center; padding: 3rem 2rem;">
+                <div class="lead-form__success">
+                    <div class="lead-form__success-icon">
+                        <i data-lucide="check-circle" class="lucide" style="width:40px;height:40px;color:#2e7d32;"></i>
+                    </div>
+                    <h3>Formulário Enviado!</h3>
+                    <p>Você será redirecionado para o WhatsApp para confirmar o envio. Nossa equipe entrará em contato em até 24 horas.</p>
+                </div>
+            </div>
+        `;
+        // Re-initialize Lucide for the new icon
+        if (window.lucide) lucide.createIcons();
+    }
+
+    // Open WhatsApp with the message
+    const whatsappUrl = `https://wa.me/5588992798152?text=${encodeURIComponent(mensagem)}`;
+    setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+    }, 800);
+}
