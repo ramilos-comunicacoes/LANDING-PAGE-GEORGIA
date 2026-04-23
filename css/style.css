@@ -501,6 +501,97 @@ button {
 }
 
 /* ============================================================
+   SECTION DIVIDER WAVES – Creative Transitions
+   ============================================================ */
+.section-divider-wave {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.section-divider-wave svg {
+    width: 100%;
+    display: block;
+}
+
+/* About (light) → Services (dark) */
+.section-divider-wave--to-dark {
+    background: var(--color-bg-light);
+    margin-top: -1px;
+}
+
+.section-divider-wave--to-dark svg {
+    height: 80px;
+}
+
+/* Services (dark) → Team (light) */
+.section-divider-wave--to-light {
+    background: var(--color-bg-light);
+    margin-bottom: -1px;
+}
+
+.section-divider-wave--to-light svg {
+    height: 80px;
+}
+
+/* Team (light) → Testimonials (warm) */
+.section-divider-wave--angle {
+    background: var(--color-bg-light);
+    margin-top: -1px;
+}
+
+.section-divider-wave--angle svg {
+    height: 60px;
+}
+
+/* Testimonials (warm) → FAQ (dark) */
+.section-divider-wave--to-dark-2 {
+    background: var(--color-bg-warm);
+    margin-top: -1px;
+}
+
+.section-divider-wave--to-dark-2 svg {
+    height: 80px;
+}
+
+/* FAQ (dark) → Contact (light) */
+.section-divider-wave--to-light-2 {
+    background: var(--color-bg-light);
+    margin-bottom: -1px;
+}
+
+.section-divider-wave--to-light-2 svg {
+    height: 80px;
+}
+
+/* Contact (light) → Footer (dark) */
+.section-divider-wave--contact-footer {
+    background: var(--color-bg-light);
+    margin-top: -1px;
+}
+
+.section-divider-wave--contact-footer svg {
+    height: 100px;
+}
+
+@media (max-width: 768px) {
+    .section-divider-wave--to-dark svg,
+    .section-divider-wave--to-light svg,
+    .section-divider-wave--to-dark-2 svg,
+    .section-divider-wave--to-light-2 svg {
+        height: 50px;
+    }
+    .section-divider-wave--angle svg {
+        height: 35px;
+    }
+    .section-divider-wave--contact-footer svg {
+        height: 60px;
+    }
+}
+
+/* ============================================================
    HERO SECTION
    ============================================================ */
 .hero {
@@ -1547,7 +1638,7 @@ button {
 .footer__description {
     font-size: 0.9rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: var(--space-xl);
 }
 
@@ -1566,8 +1657,9 @@ button {
 }
 
 .footer__link {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
     transition: all var(--transition-fast);
     display: inline-flex;
     align-items: center;
@@ -1589,8 +1681,9 @@ button {
     align-items: center;
     justify-content: space-between;
     padding-top: var(--space-xl);
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.55);
 }
 
 .footer__bottom a {
