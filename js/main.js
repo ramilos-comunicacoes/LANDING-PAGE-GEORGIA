@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounters();
     initFormHandling();
     initScrollProgressBar();
-    initUrgencyBanner();
     initFAQ();
     initSmoothScroll();
     initActiveNav();
@@ -286,27 +285,3 @@ function initScrollProgressBar() {
         progressBar.style.width = `${scrollPercent * 100}%`;
     }, { passive: true });
 }
-
-/* ── Urgency Banner ── */
-function initUrgencyBanner() {
-    const banner = document.getElementById('urgency-banner');
-    const closeBtn = document.getElementById('urgency-close');
-    
-    if (!banner || !closeBtn) return;
-
-    // Check if user previously closed it
-    if (sessionStorage.getItem('urgencyBannerClosed') === 'true') {
-        banner.style.display = 'none';
-        return;
-    }
-
-    closeBtn.addEventListener('click', () => {
-        banner.style.transform = 'translateY(-100%)';
-        banner.style.opacity = '0';
-        setTimeout(() => {
-            banner.style.display = 'none';
-        }, 300);
-        sessionStorage.setItem('urgencyBannerClosed', 'true');
-    });
-}
-
