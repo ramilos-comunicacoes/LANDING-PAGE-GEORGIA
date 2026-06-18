@@ -60,6 +60,11 @@
 </head>
 
 <body>
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="scroll-progress-bar">
+        <div class="scroll-progress-bar__fill"></div>
+    </div>
+
     <!-- MOBILE OVERLAY -->
     <div class="mobile-overlay" id="mobile-overlay"></div>
 
@@ -95,6 +100,16 @@
             </nav>
         </div>
     </header>
+
+    <!-- URGENCY BANNER -->
+    <div class="urgency-banner" id="urgency-banner">
+        <div class="urgency-banner__content">
+            <span class="urgency-banner__icon">⚡</span>
+            <span class="urgency-banner__text">Consulta gratuita por <strong>tempo limitado</strong> — Agende agora pelo WhatsApp!</span>
+            <a href="https://wa.me/5588992798152?text=Olá!%20Vi%20no%20site%20sobre%20a%20consulta%20gratuita%20e%20gostaria%20de%20agendar." target="_blank" rel="noopener" class="urgency-banner__btn">Agendar →</a>
+        </div>
+        <button class="urgency-banner__close" id="urgency-close" aria-label="Fechar banner">&times;</button>
+    </div>
 
     <!-- ══════════ HERO ══════════ -->
     <section class="hero" id="inicio">
@@ -306,6 +321,7 @@
 
             <div class="services__grid stagger-children">
                 <div class="service-card fade-in" id="service-bpc">
+                    <div class="service-card__badge">Mais Buscado</div>
                     <div class="service-card__icon"><i data-lucide="scale" class="lucide"></i></div>
                     <h3 class="service-card__title">BPC / LOAS</h3>
                     <p class="service-card__text">Benefício de Prestação Continuada para idosos a partir de 65 anos e
@@ -826,6 +842,17 @@
             <path d="M0,60 C360,100 720,0 1080,50 C1260,75 1380,40 1440,60 L1440,100 L0,100 Z" fill="#340e1f" />
         </svg>
     </div>
+
+    <!-- CTA INTERSTITIAL -->
+    <section class="cta-interstitial">
+        <div class="cta-interstitial__inner">
+            <h2 class="cta-interstitial__title">Teve seu benefício negado pelo INSS?</h2>
+            <p class="cta-interstitial__text">Não desista. A grande maioria das negativas do INSS pode ser revertida na Justiça com o auxílio de uma advogada especialista. Avaliamos seu caso gratuitamente.</p>
+            <a href="https://wa.me/5588992798152?text=Olá!%20Meu%20benefício%20foi%20negado,%20podem%20me%20ajudar?" target="_blank" rel="noopener" class="cta-interstitial__btn">
+                Falar com Especialista Agora <i data-lucide="arrow-right"></i>
+            </a>
+        </div>
+    </section>
 
     <!-- ══════════ FOOTER ══════════ -->
     <footer class="footer" id="footer">

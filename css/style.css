@@ -2528,3 +2528,211 @@ button {
         color: #000 !important;
     }
 }
+
+/* ============================================================
+   ENHANCED UI – Creative Animations & Interactions (AdSense Ready)
+   ============================================================ */
+
+/* ── Scroll Progress Bar ── */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 9999;
+    pointer-events: none;
+}
+.scroll-progress-bar__fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light), var(--color-accent));
+    background-size: 200% 100%;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 0 10px rgba(201, 169, 110, 0.6);
+    animation: gradientFlow 3s linear infinite;
+    transition: width 0.1s ease;
+}
+
+/* ── Urgency Banner ── */
+.urgency-banner {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    z-index: 990;
+    background: linear-gradient(90deg, var(--color-accent-dark), var(--color-accent), var(--color-accent-dark));
+    background-size: 200% 100%;
+    animation: gradientFlow 4s ease infinite;
+    color: var(--color-primary-dark);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 12px 48px 12px 16px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    overflow: hidden;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+}
+.header--scrolled ~ .urgency-banner {
+    top: 64px; /* match the scrolled header height */
+}
+.urgency-banner__close {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-primary-dark);
+    font-size: 1.4rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.urgency-banner__close:hover {
+    background: rgba(0,0,0,0.1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ── Service Card Enhancements ── */
+.service-card {
+    /* Retain original overflow:hidden to not break layout */
+    position: relative;
+}
+.service-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 12px 40px rgba(201, 169, 110, 0.2);
+}
+.service-card:hover .service-card__icon {
+    transform: rotate(8deg) scale(1.15);
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.3), rgba(201, 169, 110, 0.1));
+}
+.service-card__badge {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    box-shadow: 0 4px 12px rgba(201, 169, 110, 0.4);
+    z-index: 10;
+    animation: badgePulse 2s infinite ease-in-out;
+}
+@keyframes badgePulse {
+    0%, 100% { transform: translateY(0); box-shadow: 0 4px 12px rgba(201, 169, 110, 0.4); }
+    50% { transform: translateY(2px); box-shadow: 0 6px 16px rgba(201, 169, 110, 0.6); }
+}
+
+/* ── Button Shimmer Glow ── */
+.btn--primary, .cta-interstitial__btn {
+    position: relative;
+    overflow: hidden;
+}
+.btn--primary::after, .cta-interstitial__btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-20deg);
+}
+.btn--primary:hover::after, .cta-interstitial__btn:hover::after {
+    animation: shimmerSweep 0.7s ease forwards;
+}
+@keyframes shimmerSweep {
+    100% { left: 200%; }
+}
+
+/* ── CTA Interstitial ── */
+.cta-interstitial {
+    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+    padding: var(--space-4xl) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.cta-interstitial::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(201, 169, 110, 0.1) 0%, transparent 70%);
+}
+.cta-interstitial__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+.cta-interstitial__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-white);
+    line-height: 1.2;
+}
+.cta-interstitial__text {
+    font-size: 1.1rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.9;
+    margin-bottom: var(--space-md);
+}
+.cta-interstitial__btn {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: var(--color-primary-dark);
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.cta-interstitial__btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(201, 169, 110, 0.4);
+}
+
+/* ── Policy Links ── */
+.footer__policy-links {
+    margin-top: var(--space-sm);
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+}
+.footer__policy-links a {
+    color: var(--color-accent-light);
+    font-size: 0.85rem;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+}
+.footer__policy-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+

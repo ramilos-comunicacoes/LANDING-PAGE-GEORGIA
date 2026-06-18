@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScrollAnimations();
     initCounters();
+    initFormHandling();
+    initScrollProgressBar();
+    initUrgencyBanner();
     initFAQ();
     initSmoothScroll();
     initActiveNav();
@@ -270,3 +273,40 @@ Gostaria de uma análise gratuita do meu caso!`;
         window.open(whatsappUrl, '_blank');
     }, 800);
 }
+
+/* ── Scroll Progress Bar ── */
+function initScrollProgressBar() {
+    const progressBar = document.querySelector('.scroll-progress-bar__fill');
+    if (!progressBar) return;
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollTop / docHeight;
+        progressBar.style.width = `${scrollPercent * 100}%`;
+    }, { passive: true });
+}
+
+/* ── Urgency Banner ── */
+function initUrgencyBanner() {
+    const banner = document.getElementById('urgency-banner');
+    const closeBtn = document.getElementById('urgency-close');
+    
+    if (!banner || !closeBtn) return;
+
+    // Check if user previously closed it
+    if (sessionStorage.getItem('urgencyBannerClosed') === 'true') {
+        banner.style.display = 'none';
+        return;
+    }
+
+    closeBtn.addEventListener('click', () => {
+        banner.style.transform = 'translateY(-100%)';
+        banner.style.opacity = '0';
+        setTimeout(() => {
+            banner.style.display = 'none';
+        }, 300);
+        sessionStorage.setItem('urgencyBannerClosed', 'true');
+    });
+}
+
