@@ -1135,10 +1135,56 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../assets/favicon/favicon.png');
-    background-size: 100px 100px;
-    background-repeat: repeat;
-    opacity: 0.04;
+    background-image: 
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png'),
+        url('../assets/favicon/favicon.png');
+    background-size: 
+        90px 90px,
+        130px 130px,
+        55px 55px,
+        110px 110px,
+        70px 70px,
+        100px 100px,
+        60px 60px,
+        85px 85px,
+        120px 120px,
+        75px 75px,
+        95px 95px,
+        65px 65px,
+        105px 105px,
+        80px 80px,
+        50px 50px;
+    background-position: 
+        3% 8%,
+        22% 72%,
+        47% 18%,
+        73% 55%,
+        91% 12%,
+        12% 42%,
+        58% 88%,
+        82% 38%,
+        37% 58%,
+        67% 3%,
+        8% 92%,
+        95% 78%,
+        52% 45%,
+        28% 25%,
+        78% 90%;
+    background-repeat: no-repeat;
+    opacity: 0.035;
     pointer-events: none;
 }
 
