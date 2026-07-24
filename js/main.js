@@ -220,7 +220,7 @@ function initActiveNav() {
     window.addEventListener('scroll', onScroll, { passive: true });
 }
 
-/* ── Lead Form – Salário Maternidade ── */
+/* ── Lead Form ── */
 function handleLeadForm(e) {
     e.preventDefault();
     
@@ -231,14 +231,18 @@ function handleLeadForm(e) {
     const situacao = form.querySelector('#lead-situation')?.value || '';
 
     const situacaoTexts = {
+        'bpc-loas': 'BPC / LOAS',
         'gestante': 'Estou grávida',
         'mae-recente': 'Tive bebê recentemente',
         'rural': 'Sou trabalhadora rural',
+        'aposentadoria': 'Aposentadoria',
+        'incapacidade': 'Auxílio por incapacidade',
+        'revisao': 'Revisão de benefício',
         'negado': 'Tive benefício negado',
         'duvida': 'Tenho dúvidas sobre meus direitos'
     };
 
-    const mensagem = `Olá! Vim pelo site e gostaria de saber mais sobre o *Salário Maternidade*.
+    const mensagem = `Olá! Vim pelo site Geórgia Andrade Advocacia e gostaria de saber mais.
 
 📋 *Dados do formulário:*
 👤 Nome: ${nome}
@@ -246,7 +250,7 @@ function handleLeadForm(e) {
 📍 Cidade: ${cidade || 'Não informada'}
 📝 Situação: ${situacaoTexts[situacao] || situacao}
 
-Gostaria de uma análise gratuita do meu caso!`;
+Gostaria de falar com a equipe sobre meu caso.`;
 
     // Show success state
     const wrapper = form.closest('.lead-form__form-wrapper');
@@ -257,8 +261,8 @@ Gostaria de uma análise gratuita do meu caso!`;
                     <div class="lead-form__success-icon">
                         <i data-lucide="check-circle" class="lucide" style="width:40px;height:40px;color:#2e7d32;"></i>
                     </div>
-                    <h3>Formulário Enviado!</h3>
-                    <p>Você será redirecionado para o WhatsApp para confirmar o envio. Nossa equipe entrará em contato em até 24 horas.</p>
+                    <h3>Quase pronto!</h3>
+                    <p>Você será direcionado ao WhatsApp para enviar sua mensagem ao escritório.</p>
                 </div>
             </div>
         `;

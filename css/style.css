@@ -734,6 +734,42 @@ button {
     opacity: 0;
 }
 
+.hero__national-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin: 0 0 var(--space-xl);
+    padding: 10px 14px;
+    max-width: 470px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(201, 169, 110, 0.45);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    line-height: 1.35;
+}
+
+.hero__national-flag {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.hero__national-badge strong,
+.hero__national-badge small {
+    display: block;
+}
+
+.hero__national-badge strong {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.hero__national-badge small {
+    margin-top: 2px;
+    color: var(--color-text-on-dark);
+    font-size: 0.76rem;
+    opacity: 0.85;
+}
+
 .hero__actions {
     display: flex;
     align-items: center;
@@ -2209,6 +2245,12 @@ button {
     .hero__subtitle {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .hero__national-badge {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
     }
 
     .hero__actions {
