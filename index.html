@@ -141,14 +141,24 @@
                     </p>
 
                     <div class="hero__national-badge" role="note">
-                        <span class="hero__national-flag" aria-hidden="true">🇧🇷</span>
+                        <span class="hero__national-flag" aria-hidden="true">
+                            <svg viewBox="0 0 72 50" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                                <rect width="72" height="50" rx="3" fill="#009b3a" />
+                                <path d="M36 5 66 25 36 45 6 25Z" fill="#ffdf00" />
+                                <circle cx="36" cy="25" r="12" fill="#002776" />
+                                <path d="M25 21c7 1 15 4 22 9" fill="none" stroke="#fff" stroke-width="2" />
+                                <circle cx="31" cy="20" r="1" fill="#fff" />
+                                <circle cx="41" cy="29" r="1" fill="#fff" />
+                                <circle cx="43" cy="22" r=".8" fill="#fff" />
+                            </svg>
+                        </span>
                         <span><strong>Atendimento em todo o território nacional</strong><small>Clientes atendidos em todos os estados do Brasil.</small></span>
                     </div>
 
                     <div class="hero__actions">
-                        <a href="#formulario" class="btn btn--primary" id="hero-cta-formulario">
-                            <i data-lucide="message-circle-heart" class="lucide"></i>
-                            Quero saber mais
+                        <a href="#formulario" class="btn btn--primary btn--hero-lead" id="hero-cta-formulario">
+                            <i data-lucide="message-circle" class="lucide"></i>
+                            <span>Quero saber mais<small>Fale agora com nossa equipe</small></span>
                         </a>
                         <a href="#servicos" class="btn btn--outline" id="hero-cta-services">
                             Conheça nossas áreas

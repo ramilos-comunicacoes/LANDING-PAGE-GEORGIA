@@ -737,25 +737,72 @@ button {
 .hero__national-badge {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: var(--space-md);
     margin: 0 0 var(--space-xl);
-    padding: 10px 14px;
+    padding: 12px 16px;
     max-width: 470px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(201, 169, 110, 0.45);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(201, 169, 110, 0.55);
     border-radius: var(--radius-md);
     color: var(--color-white);
     line-height: 1.35;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
 }
 
 .hero__national-flag {
-    font-size: 1.6rem;
-    line-height: 1;
+    display: flex;
+    width: 46px;
+    min-width: 46px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+}
+
+.hero__national-flag svg {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .hero__national-badge strong,
 .hero__national-badge small {
     display: block;
+}
+
+.btn--hero-lead {
+    min-width: 260px;
+    padding: 17px 30px;
+    font-size: 1.08rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+    border: 2px solid rgba(255, 255, 255, 0.38);
+    box-shadow: 0 10px 28px rgba(201, 169, 110, 0.42);
+}
+
+.btn--hero-lead:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 34px rgba(201, 169, 110, 0.56);
+}
+
+.btn--hero-lead .lucide {
+    width: 23px;
+    height: 23px;
+}
+
+.btn--hero-lead span {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+}
+
+.btn--hero-lead small {
+    margin-top: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15px;
+    opacity: 0.8;
 }
 
 .hero__national-badge strong {
@@ -2440,6 +2487,22 @@ button {
     .hero__actions .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .btn--hero-lead {
+        min-width: 0;
+        padding: 18px 22px;
+        font-size: 1.1rem;
+    }
+
+    .btn--hero-lead span {
+        align-items: center;
+    }
+
+    .hero__national-badge {
+        width: 100%;
+        max-width: 420px;
+        padding: 11px 13px;
     }
 
     /* About Center on Mobile */
