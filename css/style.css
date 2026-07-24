@@ -2673,8 +2673,20 @@ button {
         margin-top: var(--space-md);
     }
 
+    /* Remove the duplicated top offset between the fixed header and hero. */
+    .hero {
+        padding-top: calc(var(--header-height) + var(--space-sm));
+        padding-bottom: var(--space-3xl);
+    }
+
+    .hero__inner {
+        padding-top: 0;
+        gap: var(--space-lg);
+    }
+
     .hero__content {
         width: 100%;
+        padding: var(--space-lg) 0 var(--space-md);
     }
 
     .hero__title {
@@ -2711,6 +2723,98 @@ button {
     .lead-form__form,
     .contact-card {
         border-radius: var(--radius-lg);
+    }
+
+    /* Keep the audience cards compact and easy to scan in two columns. */
+    .audience__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px;
+    }
+
+    .audience__item {
+        min-height: 132px;
+        justify-content: center;
+        gap: var(--space-sm);
+        padding: var(--space-md) var(--space-xs);
+    }
+
+    .audience__icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .audience__icon .lucide {
+        width: 21px;
+        height: 21px;
+    }
+
+    .audience__label {
+        font-size: 0.76rem;
+        line-height: 1.3;
+    }
+
+    /* Use the available width for the team image instead of leaving a blank side area. */
+    .team__photo-container {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto var(--space-lg);
+    }
+
+    .team__photo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .team__info {
+        padding: 0;
+    }
+
+    .team__credentials {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    .team__credential {
+        width: 100%;
+        min-height: 64px;
+        justify-content: flex-start;
+        padding: 10px 12px;
+        border-radius: var(--radius-md);
+        font-size: 0.74rem;
+        line-height: 1.3;
+        text-align: left;
+    }
+
+    .team__credential .lucide {
+        min-width: 16px;
+    }
+
+    /* Align the explanatory copy and form card without the large mobile gap. */
+    .lead-form__inner {
+        gap: var(--space-xl);
+    }
+
+    .lead-form__content,
+    .lead-form__form-wrapper {
+        width: 100%;
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .lead-form__form {
+        padding: var(--space-xl) var(--space-lg);
+        text-align: left;
+    }
+
+    .lead-form__form-title {
+        margin-bottom: var(--space-lg);
+    }
+
+    .lead-form__field {
+        margin-bottom: var(--space-md);
     }
 
     .lead-form__field input,
@@ -2777,6 +2881,16 @@ button {
     .hero__national-flag {
         width: 38px;
         min-width: 38px;
+    }
+
+    .audience__item {
+        min-height: 124px;
+    }
+
+    .team__credential {
+        min-height: 68px;
+        padding: 9px;
+        font-size: 0.7rem;
     }
 
     .btn--hero-lead {
