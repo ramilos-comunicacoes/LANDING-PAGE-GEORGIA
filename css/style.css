@@ -2027,27 +2027,56 @@ button {
 
 .contact__socials {
     display: flex;
-    gap: var(--space-md);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
     margin-top: var(--space-md);
 }
 
 .social-link {
-    width: 44px;
-    height: 44px;
+    min-height: 44px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: var(--space-sm);
+    padding: 4px 14px 4px 4px;
     background: var(--color-primary);
     color: var(--color-white);
-    border-radius: 50%;
+    border-radius: var(--radius-md);
     transition: all var(--transition-base);
 }
 
 .social-link:hover {
     background: var(--color-accent);
     color: var(--color-primary-dark);
-    transform: translateY(-3px);
+    transform: translateX(3px);
     box-shadow: var(--shadow-gold);
+}
+
+.social-link > svg {
+    order: 1;
+    min-width: 20px;
+}
+
+.social-link__label {
+    order: 2;
+    line-height: 1.25;
+}
+
+.social-link__label strong,
+.social-link__label small {
+    display: block;
+}
+
+.social-link__label strong {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.social-link__label small {
+    margin-top: 2px;
+    font-size: 0.74rem;
+    opacity: 0.78;
 }
 
 .social-link .lucide {
