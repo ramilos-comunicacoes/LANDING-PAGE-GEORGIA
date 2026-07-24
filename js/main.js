@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScrollAnimations();
     initCounters();
-    initFormHandling();
     initScrollProgressBar();
     initFAQ();
     initSmoothScroll();
